@@ -1,4 +1,4 @@
-# Flashcard Backend
+# Bookmarks Backend
 This project uses: 
 - graphql
 - apollo
@@ -22,23 +22,23 @@ npm run dev
 
 To use these data open [http://localhost:3000](http://localhost:3000) with your browser to test your graphql server using **studio apollographql**.
 
-**create a card**
+**create a bookmark**
 ```
 mutation {
-  createCard(question: "What is nextjs?", description: "Be brief", answer: "A library") {
+  createBookmark(title: "Learn React JS?", description: "This link is about react js", link: "https://reactjs.org/docs/getting-started.html") {
     id
   }
 }
 ```
 
-**To view all cards**
+**To view all bookmarks**
 ```
-query AllCards {
-  allCards {
+query AllBookmarks {
+  allBookmarks {
     id
-    question
+    title
     description
-    answer
+    link
   }
 }
 ```
