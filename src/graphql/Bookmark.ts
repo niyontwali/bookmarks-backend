@@ -7,6 +7,7 @@ export const Bookmark = objectType({
     t.nonNull.string("title");
     t.nonNull.string('description');
     t.nonNull.string("link");
+    t.nonNull.string("category");
   }
 })
 
@@ -50,15 +51,17 @@ export const bookmarkMutation = extendType({
       args: {
         title: nonNull(stringArg()),
         description: nonNull(stringArg()),
-        link: nonNull(stringArg())
+        link: nonNull(stringArg()),
+        category: nonNull(stringArg())
       },
       resolve(parent, args, context) {
-        const { title, description, link } = args;
+        const { title, description, link, category } = args;
         const newBookmark = context.prisma.bookmark.create({
           data: {
             title,
             description,
-            link
+            link,
+            category
           }
         });
         return newBookmark;
@@ -72,11 +75,12 @@ export const bookmarkMutation = extendType({
         id: nonNull(intArg()),
         title: nonNull(stringArg()),
         description: nonNull(stringArg()),
-        link: nonNull(stringArg())
+        link: nonNull(stringArg()),
+        category: nonNull(stringArg())
 
       },
       resolve(parent, args, context) {
-        const {title, description, link, id } = args;
+        const {title, description, link, category, id } = args;
         const updatedBookmark = context.prisma.bookmark.update({
           where: {
             id
@@ -84,7 +88,8 @@ export const bookmarkMutation = extendType({
           data: {
             title,
             description,
-            link
+            link,
+            category
           }
         })
         return updatedBookmark

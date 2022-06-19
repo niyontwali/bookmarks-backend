@@ -5,6 +5,7 @@ CREATE TABLE "Bookmark" (
     "title" TEXT NOT NULL,
     "description" TEXT NOT NULL,
     "link" TEXT NOT NULL,
+    "category" TEXT NOT NULL,
 
     CONSTRAINT "Bookmark_pkey" PRIMARY KEY ("id")
 );

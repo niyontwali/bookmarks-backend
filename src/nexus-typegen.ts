@@ -29,6 +29,7 @@ export interface NexusGenScalars {
 
 export interface NexusGenObjects {
   Bookmark: { // root type
+    category: string; // String!
     description: string; // String!
     id: number; // Int!
     link: string; // String!
@@ -50,6 +51,7 @@ export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars
 
 export interface NexusGenFieldTypes {
   Bookmark: { // field return type
+    category: string; // String!
     description: string; // String!
     id: number; // Int!
     link: string; // String!
@@ -68,6 +70,7 @@ export interface NexusGenFieldTypes {
 
 export interface NexusGenFieldTypeNames {
   Bookmark: { // field return type name
+    category: 'String'
     description: 'String'
     id: 'Int'
     link: 'String'
@@ -87,6 +90,7 @@ export interface NexusGenFieldTypeNames {
 export interface NexusGenArgTypes {
   Mutation: {
     createBookmark: { // args
+      category: string; // String!
       description: string; // String!
       link: string; // String!
       title: string; // String!
@@ -95,6 +99,7 @@ export interface NexusGenArgTypes {
       id: number; // Int!
     }
     updateBookmark: { // args
+      category: string; // String!
       description: string; // String!
       id: number; // Int!
       link: string; // String!

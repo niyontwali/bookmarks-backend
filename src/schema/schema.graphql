@@ -3,6 +3,7 @@
 
 
 type Bookmark {
+  category: String!
   description: String!
   id: Int!
   link: String!
@@ -10,9 +11,9 @@ type Bookmark {
 }
 
 type Mutation {
-  createBookmark(description: String!, link: String!, title: String!): Bookmark!
+  createBookmark(category: String!, description: String!, link: String!, title: String!): Bookmark!
   deleteBookmark(id: Int!): Bookmark!
-  updateBookmark(description: String!, id: Int!, link: String!, title: String!): Bookmark!
+  updateBookmark(category: String!, description: String!, id: Int!, link: String!, title: String!): Bookmark!
 }
 
 type Query {
