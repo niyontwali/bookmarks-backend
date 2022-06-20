@@ -17,6 +17,6 @@ type Mutation {
 }
 
 type Query {
-  allBookmarks: [Bookmark!]!
+  allBookmarks(filter: String): [Bookmark!]!
   oneBookmark(id: Int!): Bookmark
 }

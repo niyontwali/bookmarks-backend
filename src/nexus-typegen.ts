@@ -107,6 +107,9 @@ export interface NexusGenArgTypes {
     }
   }
   Query: {
+    allBookmarks: { // args
+      filter?: string | null; // String
+    }
     oneBookmark: { // args
       id: number; // Int!
     }

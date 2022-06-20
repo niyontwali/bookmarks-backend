@@ -18,8 +18,19 @@ export const BookmarkQuery = extendType({
   definition(t) {
     t.nonNull.list.nonNull.field("allBookmarks", {
       type: "Bookmark",
+      args: {
+        filter: stringArg(),
+      },
       resolve(parent, args, context, info) {
+        const where = args.filter
+        ? {
+          OR: [
+            { category: { contains: args.filter } },
+          ],
+        }
+        : {};
         return context.prisma.bookmark.findMany({
+          where,
           orderBy: [
             {
               id: "desc",
