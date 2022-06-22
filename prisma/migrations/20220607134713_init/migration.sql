@@ -1,11 +1,10 @@
 -- CreateTable
-CREATE TABLE "Bookmark" (
+CREATE TABLE "Learning" (
     "id" SERIAL NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "title" TEXT NOT NULL,
-    "description" TEXT NOT NULL,
-    "link" TEXT NOT NULL,
+    "content" TEXT NOT NULL,
     "category" TEXT NOT NULL,
 
-    CONSTRAINT "Bookmark_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "Learning_pkey" PRIMARY KEY ("id")
 );
