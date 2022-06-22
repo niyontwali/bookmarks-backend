@@ -10,13 +10,25 @@ type Bookmark {
   title: String!
 }
 
+type Learning {
+  category: String!
+  content: String!
+  id: Int!
+  title: String!
+}
+
 type Mutation {
   createBookmark(category: String!, description: String!, link: String!, title: String!): Bookmark!
+  createLearning(category: String!, content: String!, title: String!): Learning!
   deleteBookmark(id: Int!): Bookmark!
+  deleteLearning(id: Int!): Learning!
   updateBookmark(category: String!, description: String!, id: Int!, link: String!, title: String!): Bookmark!
+  updateLearning(category: String!, content: String!, id: Int!, title: String!): Learning!
 }
 
 type Query {
   allBookmarks(filter: String): [Bookmark!]!
+  allLearnings(filter: String): [Learning!]!
   oneBookmark(id: Int!): Bookmark
+  oneLearning(id: Int!): Learning
 }

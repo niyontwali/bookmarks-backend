@@ -35,6 +35,12 @@ export interface NexusGenObjects {
     link: string; // String!
     title: string; // String!
   }
+  Learning: { // root type
+    category: string; // String!
+    content: string; // String!
+    id: number; // Int!
+    title: string; // String!
+  }
   Mutation: {};
   Query: {};
 }
@@ -57,14 +63,25 @@ export interface NexusGenFieldTypes {
     link: string; // String!
     title: string; // String!
   }
+  Learning: { // field return type
+    category: string; // String!
+    content: string; // String!
+    id: number; // Int!
+    title: string; // String!
+  }
   Mutation: { // field return type
     createBookmark: NexusGenRootTypes['Bookmark']; // Bookmark!
+    createLearning: NexusGenRootTypes['Learning']; // Learning!
     deleteBookmark: NexusGenRootTypes['Bookmark']; // Bookmark!
+    deleteLearning: NexusGenRootTypes['Learning']; // Learning!
     updateBookmark: NexusGenRootTypes['Bookmark']; // Bookmark!
+    updateLearning: NexusGenRootTypes['Learning']; // Learning!
   }
   Query: { // field return type
     allBookmarks: NexusGenRootTypes['Bookmark'][]; // [Bookmark!]!
+    allLearnings: NexusGenRootTypes['Learning'][]; // [Learning!]!
     oneBookmark: NexusGenRootTypes['Bookmark'] | null; // Bookmark
+    oneLearning: NexusGenRootTypes['Learning'] | null; // Learning
   }
 }
 
@@ -76,14 +93,25 @@ export interface NexusGenFieldTypeNames {
     link: 'String'
     title: 'String'
   }
+  Learning: { // field return type name
+    category: 'String'
+    content: 'String'
+    id: 'Int'
+    title: 'String'
+  }
   Mutation: { // field return type name
     createBookmark: 'Bookmark'
+    createLearning: 'Learning'
     deleteBookmark: 'Bookmark'
+    deleteLearning: 'Learning'
     updateBookmark: 'Bookmark'
+    updateLearning: 'Learning'
   }
   Query: { // field return type name
     allBookmarks: 'Bookmark'
+    allLearnings: 'Learning'
     oneBookmark: 'Bookmark'
+    oneLearning: 'Learning'
   }
 }
 
@@ -95,7 +123,15 @@ export interface NexusGenArgTypes {
       link: string; // String!
       title: string; // String!
     }
+    createLearning: { // args
+      category: string; // String!
+      content: string; // String!
+      title: string; // String!
+    }
     deleteBookmark: { // args
+      id: number; // Int!
+    }
+    deleteLearning: { // args
       id: number; // Int!
     }
     updateBookmark: { // args
@@ -105,12 +141,24 @@ export interface NexusGenArgTypes {
       link: string; // String!
       title: string; // String!
     }
+    updateLearning: { // args
+      category: string; // String!
+      content: string; // String!
+      id: number; // Int!
+      title: string; // String!
+    }
   }
   Query: {
     allBookmarks: { // args
       filter?: string | null; // String
     }
+    allLearnings: { // args
+      filter?: string | null; // String
+    }
     oneBookmark: { // args
+      id: number; // Int!
+    }
+    oneLearning: { // args
       id: number; // Int!
     }
   }

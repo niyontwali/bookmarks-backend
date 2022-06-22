@@ -18,3 +18,10 @@ model Bookmark {
   link String
   category String
 }
+model Learning {
+  id Int @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  title String
+  content String
+  category String
+}
