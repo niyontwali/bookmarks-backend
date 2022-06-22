@@ -38,6 +38,7 @@ export interface NexusGenObjects {
   Learning: { // root type
     category: string; // String!
     content: string; // String!
+    date: string; // String!
     excerpt: string; // String!
     id: number; // Int!
     title: string; // String!
@@ -67,6 +68,7 @@ export interface NexusGenFieldTypes {
   Learning: { // field return type
     category: string; // String!
     content: string; // String!
+    date: string; // String!
     excerpt: string; // String!
     id: number; // Int!
     title: string; // String!
@@ -98,6 +100,7 @@ export interface NexusGenFieldTypeNames {
   Learning: { // field return type name
     category: 'String'
     content: 'String'
+    date: 'String'
     excerpt: 'String'
     id: 'Int'
     title: 'String'
@@ -129,6 +132,7 @@ export interface NexusGenArgTypes {
     createLearning: { // args
       category: string; // String!
       content: string; // String!
+      date: string; // String!
       excerpt: string; // String!
       title: string; // String!
     }
@@ -148,6 +152,7 @@ export interface NexusGenArgTypes {
     updateLearning: { // args
       category: string; // String!
       content: string; // String!
+      date: string; // String!
       excerpt: string; // String!
       id: number; // Int!
       title: string; // String!

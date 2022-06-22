@@ -6,6 +6,8 @@ CREATE TABLE "Learning" (
     "excerpt" TEXT NOT NULL,
     "content" TEXT NOT NULL,
     "category" TEXT NOT NULL,
+    "date" TEXT NOT NULL,
+
 
     CONSTRAINT "Learning_pkey" PRIMARY KEY ("id")
 );

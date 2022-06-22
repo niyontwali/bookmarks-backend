@@ -13,6 +13,7 @@ type Bookmark {
 type Learning {
   category: String!
   content: String!
+  date: String!
   excerpt: String!
   id: Int!
   title: String!
@@ -20,11 +21,11 @@ type Learning {
 
 type Mutation {
   createBookmark(category: String!, description: String!, link: String!, title: String!): Bookmark!
-  createLearning(category: String!, content: String!, excerpt: String!, title: String!): Learning!
+  createLearning(category: String!, content: String!, date: String!, excerpt: String!, title: String!): Learning!
   deleteBookmark(id: Int!): Bookmark!
   deleteLearning(id: Int!): Learning!
   updateBookmark(category: String!, description: String!, id: Int!, link: String!, title: String!): Bookmark!
-  updateLearning(category: String!, content: String!, excerpt: String!, id: Int!, title: String!): Learning!
+  updateLearning(category: String!, content: String!, date: String!, excerpt: String!, id: Int!, title: String!): Learning!
 }
 
 type Query {

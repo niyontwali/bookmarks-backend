@@ -25,4 +25,5 @@ model Learning {
   excerpt String
   content String
   category String
+  date String
 }
