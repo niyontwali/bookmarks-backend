@@ -5,6 +5,7 @@ export const Learning = objectType({
   definition(t) {
     t.nonNull.int("id");
     t.nonNull.string("title");
+    t.nonNull.string("excerpt");
     t.nonNull.string("content");
     t.nonNull.string("category")
   },
@@ -64,14 +65,16 @@ export const LearningMutation = extendType({
       type: "Learning",
       args: {
         title: nonNull(stringArg()),
+        excerpt: nonNull(stringArg()),
         content: nonNull(stringArg()),
         category: nonNull(stringArg()),
       },
       resolve(parent, args, context) {
-        const { title, content, category } = args;
+        const { title, excerpt, content, category } = args;
         const newLearning = context.prisma.learning.create({
           data: {
             title,
+            excerpt,
             content,
             category,
           },
@@ -86,17 +89,19 @@ export const LearningMutation = extendType({
       args: {
         id: nonNull(intArg()),
         title: nonNull(stringArg()),
+        excerpt: nonNull(stringArg()),
         content: nonNull(stringArg()),
         category: nonNull(stringArg()),
       },
       resolve(parent, args, context) {
-        const { title, content, category, id } = args;
+        const { title, excerpt, content, category, id } = args;
         const updatedLearning = context.prisma.learning.update({
           where: {
             id,
           },
           data: {
             title,
+            excerpt,
             content,
             category,
           },
